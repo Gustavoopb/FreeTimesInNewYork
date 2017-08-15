@@ -16,4 +16,4 @@ class App extends React.Component {
     }
 }
 
-AppRegistry.registerComponent('Boilerplate', () => App);
+AppRegistry.registerComponent('FreeTimesInNewYork', () => App);

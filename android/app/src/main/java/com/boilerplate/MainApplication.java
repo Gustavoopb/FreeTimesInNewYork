@@ -1,4 +1,4 @@
-package com.boilerplate;
+package com.FreeTimesInNewYork;
 
 import android.app.Application;
 
