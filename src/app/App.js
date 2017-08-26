@@ -1,11 +1,11 @@
-import { AppRegistry } from 'react-native'
-import { Application } from './components/Application'
+import Application from './navigators/MainDrawerNavigator'
 import { ApplicationReducer } from './reducers/ApplicationReducer'
 import { Provider } from 'react-redux'
 import React from 'react'
-import { StackNavigator } from 'react-navigation'
+import axios from 'axios'
 import { createStore } from 'redux'
-class App extends React.Component {
+
+export default class App extends React.Component {
     store = createStore(ApplicationReducer)
     render() {
         return (
@@ -16,4 +16,5 @@ class App extends React.Component {
     }
 }
 
-AppRegistry.registerComponent('FreeTimesInNewYork', () => App);
+axios.defaults.baseURL = 'https://api.nytimes.com/svc';
+axios.defaults.headers.common['api-key'] = '17ce5d0f117945bd902b1345a930fd3f';

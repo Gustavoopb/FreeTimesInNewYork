@@ -1,4 +1,14 @@
 {
   "name": "FreeTimesInNewYork",
-  "displayName": "FreeTimesInNewYork"
+  "displayName": "FreeTimesInNewYork",
+  "expo": {
+    "name": "FreeTimesInNewYork",
+    "description": "FreeTimesInNewYork",
+    "slug": "FreeTimesInNewYork",
+    "privacy": "public",
+    "sdkVersion": "20.0.0",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "primaryColor": "#e5e5e5"
+  }
 }

@@ -1,13 +1,14 @@
 import { HomeScreen } from '../screens/HomeScreen'
-import { OptionsScreen } from '../screens/OptionsScreen'
+import { MovieDetailScreen } from '../screens/MovieDetailScreen'
 import React from 'react'
 import { StackNavigator } from 'react-navigation'
 
 export const HomeStackNavigator = StackNavigator({
-    firstHomeItem: {
+    Home: {
         screen: HomeScreen
     },
-    secondHomeItem: {
-        screen: OptionsScreen
+    MovieDetail: {
+        screen: MovieDetailScreen,
+        path: 'option/:movie'
     }
 })

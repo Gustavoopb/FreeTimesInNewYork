@@ -1,15 +1,28 @@
-import { DrawerNavigator } from 'react-navigation'
+import { DrawerNavigator, addNavigationHelpers } from 'react-navigation'
+
 import { HomeStackNavigator } from './HomeStackNavigator'
 import { ProfileStackNavigator } from './ProfileStackNavigator'
 import React from 'react'
+import { connect } from 'react-redux';
 
-const MainDrawerNavigatorComponent = DrawerNavigator({
-    firstDrawerItem: {
+export const MainDrawerNavigator = DrawerNavigator({
+    HomeStackNavigator: {
         screen: HomeStackNavigator
     },
-    secondDrawerItem: {
+    AboutStackNavigator: {
         screen: ProfileStackNavigator
     }
 })
 
-export const MainDrawerNavigator = () => <MainDrawerNavigatorComponent />
+
+export class ApplicationWithNavigationState extends React.Component {
+    render() {
+        return (<MainDrawerNavigator navigation={addNavigationHelpers({ dispatch: this.props.dispatch, state: this.props.nav })} />)
+    }
+}
+
+const mapStateToProps = state => ({
+    nav: state.nav,
+});
+
+export default connect(mapStateToProps)(ApplicationWithNavigationState);
